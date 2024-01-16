@@ -1,0 +1,23 @@
+name: app_plants
+
+proxy:
+  node:
+    - vite.lndo.site:5173
+
+services:
+  node:
+    type: node:18
+    scanner: false
+    ports:
+      - 5173:5173
+
+
+tooling:
+  npm:
+    service: node
+    description: Runs npm
+    cmd: npm
+  node:
+    service: node
+    description: Runs node commands
+    cmd: node    
